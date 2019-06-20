@@ -3,7 +3,14 @@ import gql from 'graphql-tag';
 export default gql`
   query list {
     list @client {
-      a
+      _ {
+        ... on A {
+          a
+        }
+        ... on B {
+          b
+        }
+      }
       b
       c
       d
